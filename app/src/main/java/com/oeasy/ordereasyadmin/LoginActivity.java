@@ -1,8 +1,10 @@
 package com.oeasy.ordereasyadmin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,11 +16,16 @@ public  class LoginActivity extends AppCompatActivity implements View.OnClickLis
 
 
     Button bt_login,bt_cancel;
+    String login_as;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+            login_as = getIntent().getStringExtra("key");
+            Log.e("AAA",login_as);
+
         bt_login=findViewById(R.id.login_button);
         bt_cancel=findViewById(R.id.login_cancel);
         bt_login.setOnClickListener(this);
@@ -30,11 +37,23 @@ public  class LoginActivity extends AppCompatActivity implements View.OnClickLis
     {
         if(view.getId()==R.id.login_button)
         {
+            if(login_as.equals("Manager")){
+                Intent intent=new Intent(this,LoginActivityManager.class);
+                Log.e("as","das");
+                startActivity(intent);
+
+            }
+            else if(login_as.equals("Waiter"))
+            {
+                Intent intent=new Intent(this,LoginActivityWaiter.class);
+                startActivity(intent);
+            }
 
         }
         else if(view.getId()==R.id.login_cancel)
         {
-
+            Intent intent=new Intent(this,HomeActivity.class);
+            startActivity(intent);
         }
     }
 }

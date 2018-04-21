@@ -3,13 +3,15 @@ package com.oeasy.ordereasyadmin;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button bt_mngr,bt_cook,bt_waiter;
-
+    String final_class,login_as;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +34,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     {
         if(view.getId()==R.id.home_b1)
         {
-            startActivity(new Intent(this,LoginActivity.class));
+            login_as="Manager";
+            intent=new Intent(this,LoginActivity.class);
+            intent.putExtra("key",login_as);
+            startActivity(intent);
         }
 
         else if(view.getId()==R.id.home_b3)
         {
-            startActivity(new Intent(this,LoginActivity.class));
+
+            login_as="Waiter";
+            intent=new Intent(this,LoginActivity.class);
+            intent.putExtra("key",login_as);
+            startActivity(intent);
         }
         else if(view.getId()==R.id.home_b2)
         {
-            startActivity(new Intent(this,CookActivity.class));
+            intent=new Intent(this,CookActivity.class);
+            startActivity(intent);
         }
-
     }
 }

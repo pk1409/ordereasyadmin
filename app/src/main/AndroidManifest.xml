@@ -26,6 +26,18 @@
         <activity android:name=".CookActivity">
 
         </activity>
+        <activity android:name=".LoginActivityWaiter">
+
+        </activity>
+        <activity android:name=".LoginActivityManager">
+
+        </activity>
+        <activity android:name=".Attendance">
+
+        </activity>
+        <activity android:name=".WaiterLayoutClicked">
+
+        </activity>
 
     </application>
 

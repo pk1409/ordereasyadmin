@@ -10,40 +10,38 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CookActivity extends AppCompatActivity {
+public class WaiterLayoutClicked extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private List<CookItems> FoodList=new ArrayList<>();
-    private CookAdapter cookAdapter;
+    private List<WaiterFoodItems> FoodList=new ArrayList<>();
+    private FoodAdapter foodAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.waiter_layout_clicked);
         recyclerView=(RecyclerView) findViewById(R.id.food_recycler_view);
-        cookAdapter=new CookAdapter(FoodList);
+        foodAdapter=new FoodAdapter(FoodList);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(cookAdapter);
+        recyclerView.setAdapter(foodAdapter);
 
         prepareFoodData();
     }
     private void prepareFoodData(){
-        CookItems foodItems=new CookItems("Paneer Makhni",16,1,"Kumar Naman");
+        WaiterFoodItems foodItems=new WaiterFoodItems("Paneer Makhni",16);
         FoodList.add(foodItems);
-        foodItems=new CookItems("paneer mas",19,3,"Kumar Naman");
+        foodItems=new WaiterFoodItems("chicken Lawabdar",1);
         FoodList.add(foodItems);
-        foodItems=new CookItems("fgh",1,9,"Kumar Naman");
+        foodItems=new WaiterFoodItems("baby corn",3);
         FoodList.add(foodItems);
-        foodItems=new CookItems("dhdlii",6,5,"Kumar Naman");
+        foodItems=new WaiterFoodItems("chicken chilli",2);
         FoodList.add(foodItems);
-        foodItems=new CookItems("dlkjdlj",77,4,"Kumar Naman");
+        foodItems=new WaiterFoodItems("aalooo",8);
         FoodList.add(foodItems);
-        foodItems=new CookItems("ddd",2,8,"Kumar Naman");
+        foodItems=new WaiterFoodItems("ghoomar",6);
         FoodList.add(foodItems);
-        foodItems=new CookItems("djd",17,11,"Kumar Naman");
-        FoodList.add(foodItems);
-        cookAdapter.notifyDataSetChanged();
+        foodAdapter.notifyDataSetChanged();
 
 
     }
