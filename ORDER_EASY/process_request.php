@@ -10,9 +10,9 @@
 
 		$cnt=0;
 		$user_id=$_POST['home'];
-		//$user_id="naman7kumar@gmail.com";
+		//$user_id="mkj@gmail.com";
 
-		$query="SELECT foodID FROM recommender WHERE userID='$user_id' AND foodID!=0 LIMIT 4";
+		$query="SELECT foodID FROM recommended WHERE userID='$user_id' AND foodID!=0 LIMIT 4";
 		$result= mysqli_query($conn,$query);
 		if(mysqli_num_rows($result)>0){
 
@@ -38,7 +38,7 @@
 
 			}
 		}
-
+		
 		for($i=1;$i<=5;$i++){
 
 			$query="SELECT * FROM food_items WHERE item_type=$i LIMIT 4 ";
@@ -79,7 +79,7 @@
 		$user_id=$_POST['all'];
 		//$user_id="mkj@gmail.com";
 
-		$query="SELECT foodID FROM recommender WHERE userID='$user_id' AND foodID!=0";
+		$query="SELECT foodID FROM recommended WHERE userID='$user_id' AND foodID!=0";
 		$result= mysqli_query($conn,$query);
 		if(mysqli_num_rows($result)>0){
 
