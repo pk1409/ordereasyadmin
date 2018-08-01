@@ -1,4 +1,4 @@
-package com.oeasy.ordereasyadmin;
+package com.oeasy.ordereasyadmin.Modal;
 public class WaiterFoodItems {
     private String mname;
     private int mquantity;
@@ -11,9 +11,6 @@ public class WaiterFoodItems {
     public String getMname() {
         return mname;
     }
-
-
-
     public int getMquantity() {
         return mquantity;
     }

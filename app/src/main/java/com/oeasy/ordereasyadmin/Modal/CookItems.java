@@ -1,4 +1,4 @@
-package com.oeasy.ordereasyadmin;
+package com.oeasy.ordereasyadmin.Modal;
 public class CookItems {
     private String mname;
     private int mquantity;

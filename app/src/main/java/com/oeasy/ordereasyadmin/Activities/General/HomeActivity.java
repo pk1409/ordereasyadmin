@@ -1,11 +1,13 @@
-package com.oeasy.ordereasyadmin;
+package com.oeasy.ordereasyadmin.Activities.General;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.oeasy.ordereasyadmin.Activities.Cook.CookActivity;
+import com.oeasy.ordereasyadmin.R;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 

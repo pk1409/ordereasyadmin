@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oeasy.ordereasyadmin">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".Activities.General.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,22 +18,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Activities.General.LoginActivity">
 
         </activity>
-        <activity android:name=".CookActivity">
+        <activity android:name=".Activities.Cook.CookActivity">
 
         </activity>
-        <activity android:name=".LoginActivityWaiter">
+        <activity android:name=".Activities.Waiter.WaiterHomeActivity">
 
         </activity>
-        <activity android:name=".LoginActivityManager">
+        <activity android:name=".Activities.Manager.ManagerHomeActivity">
 
         </activity>
-        <activity android:name=".Attendance">
+        <activity android:name=".Activities.Manager.AttendanceActivity">
 
         </activity>
-        <activity android:name=".WaiterLayoutClicked">
+        <activity android:name=".Activities.Waiter.TableDetailsActivity">
 
         </activity>
 
